@@ -1,0 +1,11 @@
+from matplotlib import pyplot as plt
+from pathlib import Path as P
+import pandas as pd
+import tarfile as t
+from urllib import request as r
+
+def load_housing_data():
+    tarball_path = P("datasets/housing.tgs")
+    if not tarball_path.is_file():
+        P("datasets").mkdir(parents= True, exist_ok= True)
+        url = "https://raw.githubusercontent.com/ageron/data/main/housing.tgz"
